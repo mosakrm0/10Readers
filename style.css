@@ -1,0 +1,171 @@
+:root {
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --selected-bg: #2ecc71;
+    --selected-text: #fff;
+    --card-bg: #fff;
+    --card-border: #e0e0e0;
+    --title-color: #333;
+    --list-bg: #fff;
+    --list-hover-bg: #f0f0f0;
+    --list-text-color: #333;
+  }
+  
+  [data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #eee;
+    --selected-bg: #27ae60;
+    --selected-text: #fff;
+    --card-bg: #2c2c2c;
+    --card-border: #444;
+    --title-color: #eee;
+    --list-bg: #2c2c2c;
+    --list-hover-bg: #333;
+    --list-text-color: #eee;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Cairo', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 80px; /* مساحة لمفتاح تغيير الثيم */
+  }
+
+  .card-custom {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+  }
+  
+  .list-group {
+    background-color: var(--list-bg);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    background-color: var(--list-bg);
+    color: var(--list-text-color);
+    border: none;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .list-group-item:hover {
+    background-color: var(--list-hover-bg);
+    color: var(--selected-text);
+    transform: scale(1.03);
+  }
+  
+  .selected {
+    background-color: var(--selected-bg) !important;
+    color: var(--selected-text) !important;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .reading-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .reading-card {
+    flex: 1 1 45%;
+    min-width: 280px;
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .reading-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .reading-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .reading-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  #theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--selected-bg);
+    color: var(--selected-text);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    z-index: 1000;
+  }
+  
+  /* تحسين التصميم للهواتف والأجهزة اللوحية */
+  @media (max-width: 768px) {
+    .reading-card {
+      flex: 1 1 90%;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    .list-group-item {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  
+  .form-control-custom {
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin: 0 5px;
+  }
+  
+  .filter-group {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
